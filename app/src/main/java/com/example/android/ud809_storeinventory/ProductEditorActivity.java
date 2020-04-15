@@ -457,7 +457,7 @@ public class ProductEditorActivity extends AppCompatActivity implements
 
         Intent intent = new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:")); // only email apps should handle this
-        intent.putExtra(Intent.EXTRA_EMAIL, address);
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[] { address });
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
         intent.putExtra(Intent.EXTRA_TEXT, body);
         if (intent.resolveActivity(getPackageManager()) != null) {
